@@ -1,0 +1,15 @@
+# Virtual Environment
+realtyai_env/
+
+# Data files
+data/
+*.csv
+*.npy
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/

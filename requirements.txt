@@ -1,0 +1,11 @@
+streamlit
+tensorflow
+prophet
+numpy
+pandas
+opencv-python
+matplotlib
+scikit-image
+scipy
+joblib
+xgboost
