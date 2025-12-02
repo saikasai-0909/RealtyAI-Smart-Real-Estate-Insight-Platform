@@ -1,0 +1,16 @@
+streamlit
+pandas
+numpy
+matplotlib
+plotly
+scikit-learn
+prophet
+tensorflow
+keras
+Pillow
+reportlab
+opencv-python
+joblib
+requests
+tqdm
+python-dateutil
