@@ -24,24 +24,24 @@ RealtyAI is a production-ready machine learning application that combines comput
 - Deep learning-based property classification
 - Residential vs. Commercial detection with confidence scores
 - Real-time image preprocessing and mask generation
-- Supports PNG, JPG, JPEG formats [file:2]
+- Supports PNG, JPG, JPEG formats
 
 ### 📈 Prophet Time Series Forecasting
-- Multi-year price forecasting (1-20 years)
+- Multi-year price forecasting
 - Excel/CSV data input support
 - Automatic data normalization and sequence generation
-- Handles variable-length historical data [file:2]
+- Handles variable-length historical data
 
 ### 💰 XGBoost Price Prediction
 - **Dual input modes**: Manual entry or batch CSV/Excel upload
 - 50+ engineered features including property characteristics, location, and quality metrics
 - Optimized hyperparameters for accurate valuation
-- Log-transform predictions for stable price estimates [file:2]
+- Log-transform predictions for stable price estimates
 
 ### 📄 Professional PDF Reports
 - Multi-page comprehensive reports with all predictions
 - Embedded visualizations and data tables
 - Property feature summaries
-- Export-ready format for stakeholders [file:2]
+- Export-ready format for stakeholders
 
 
