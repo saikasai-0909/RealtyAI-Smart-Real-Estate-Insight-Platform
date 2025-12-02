@@ -1,0 +1,46 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+env/
+venv/
+zillow_realtyai/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+
+# Large data (not needed in Docker)
+data/
+datasets/
+notebooks/
+
+# Model backups (but keep final models)
+models_backup/
+old_models/
+checkpoints/
+
+# Only include final model files
+!models/*.keras
+!models/*.pkl
+!models/*.h5
+
+# Keep required files
+!app2.py
+!requirements.txt
+
+# Exclude unnecessary config
+.env
+.streamlit/secrets.toml
+.streamlit/config.toml

@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  realty-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: realty-ai-app
+    image: realty-ai:latest
+    ports:
+      - "8501:8501"
+    environment:
+      # Streamlit Configuration
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+      
+      # Python Configuration
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      
+      # TensorFlow Configuration
+      - TF_CPP_MIN_LOG_LEVEL=2
+      - TF_ENABLE_ONEDNN_OPTS=0
+    
+    volumes:
+      # Optional: Mount models directory for easier updates
+      # Uncomment the line below if you want to update models without rebuilding
+      # - ./models:/app/models:ro
+      
+      # Optional: Mount for logs
+      - ./logs:/app/logs
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+        reservations:
+          cpus: '2'
+          memory: 4G
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Network configuration
+    networks:
+      - realty-ai-network
+
+networks:
+  realty-ai-network:
+    driver: bridge
