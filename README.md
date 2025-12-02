@@ -53,27 +53,25 @@ RealtyAI is a production-ready machine learning application that combines comput
 ## 🏗️ Architecture
 
 
-┌─────────────────┐
-│ Image Upload │──► U-Net Model ──► Classification
-└─────────────────┘ (Residential/Commercial)
-│
-▼
-┌─────────────────┐ ┌──────────────┐
-│ Historical Data │──► LSTM Model ──►│ Forecasted │
-│ (Excel/CSV) │ │ Prices │
-└─────────────────┘ └──────────────┘
-│
-▼
-┌─────────────────┐ ┌──────────────┐
-│ Property Data │──► XGBoost ─────►│ Final Price │
-│ (50+ features) │ │ Prediction │
-└─────────────────┘ └──────────────┘
-│
-▼
-┌────────────────┐
-│ PDF Report │
-│ Generation │
-└────────────────┘
+E[Historical Data<br/>Excel/CSV] -->|Time Series| F[LSTM Model]
+F -->|Forecasting| G[Future Price Predictions]
+
+H[Property Features<br/>50+ Attributes] -->|Feature Engineering| I[XGBoost Model]
+I -->|Regression| J[Final Price Prediction]
+
+D --> K[Combine Results]
+G --> K
+J --> K
+K -->|Generate| L[PDF Report]
+
+style A fill:#e1f5ff
+style E fill:#e1f5ff
+style H fill:#e1f5ff
+style B fill:#fff4e1
+style F fill:#fff4e1
+style I fill:#fff4e1
+style L fill:#e8f5e9
+
 
 
 
