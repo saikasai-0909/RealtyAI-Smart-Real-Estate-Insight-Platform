@@ -1,0 +1,27 @@
+{
+  "target_columns": [
+    "ZHVI_AllHomes"
+  ],
+  "input_features": [
+    "ZHVI_2bedroom",
+    "ZHVI_3bedroom",
+    "ZHVI_4bedroom",
+    "ZHVI_5BedroomOrMore",
+    "ZHVI_BottomTier",
+    "ZHVI_MiddleTier",
+    "ZHVI_SingleFamilyResidence",
+    "ZHVI_TopTier"
+  ],
+  "dataset_shape": [
+    121170,
+    20
+  ],
+  "X_shape": [
+    121170,
+    8
+  ],
+  "y_shape": [
+    121170,
+    1
+  ]
+}
