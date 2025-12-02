@@ -1,77 +1,87 @@
+# 🏠 RealtyAI - Complete Property Prediction Pipeline
+
 <div align="center">
 
-# 🏠 RealtyAI - Property Prediction Pipeline
+![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28-red?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+**An intelligent end-to-end ML system for property analysis, price forecasting, and automated reporting**
 
-**An end-to-end machine learning application for property classification, price forecasting, and valuation prediction**
-
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [Models](#-models) • [Contributing](#-contributing)
-
-<img src="https://via.placeholder.com/800x400/2E86AB/FFFFFF?text=RealtyAI+Dashboard" alt="RealtyAI Dashboard" width="800"/>
+[Features](#features) • [Architecture](#architecture) • [Installation](#installation) • [Usage](#usage) • [Models](#models) • [Screenshots](#screenshots)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## 🎯 Overview
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Models](#-models)
-- [Project Structure](#-project-structure)
-- [Sample Data](#-sample-data)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Contact](#-contact)
+RealtyAI is a production-ready machine learning application that combines computer vision, time series forecasting, and gradient boosting to deliver comprehensive property analysis [file:2]. The system provides:
 
----
-
-## 🌟 Overview
-
-**RealtyAI** is a comprehensive property analysis platform that combines three powerful deep learning models into a seamless workflow:
-
-1. **U-Net Segmentation** - Classifies properties as Residential or Commercial
-2. **LSTM Forecasting** - Predicts future property price trends
-3. **XGBoost Regression** - Estimates accurate property valuations
-
-The application features an intuitive **Streamlit interface** and generates professional **PDF reports** with visualizations and detailed analysis [web:9].
-
----
+- **U-Net Segmentation** for residential vs. commercial property classification from satellite/aerial imagery
+- **LSTM Forecasting** for multi-year property price predictions
+- **XGBoost Regression** for accurate property valuation based on 50+ features
+- **Automated PDF Reports** with visualizations and detailed analytics
 
 ## ✨ Features
 
-### 🏗️ Multi-Model Pipeline
-- **U-Net Segmentation**: Analyze property images with 256×256 pixel segmentation masks
-- **LSTM Time Series**: Year-wise price forecasting with historical trend comparison
-- **XGBoost Prediction**: 50+ feature-based property valuation
+### 🖼️ U-Net Image Segmentation
+- Deep learning-based property classification
+- Residential vs. Commercial detection with confidence scores
+- Real-time image preprocessing and mask generation
+- Supports PNG, JPG, JPEG formats [file:2]
 
-### 🎨 User Experience
-- ✅ Side-by-side image comparison (original vs. segmented)
-- ✅ Interactive Plotly graphs with historical vs. forecast visualization
-- ✅ Real-time prediction with confidence scores
-- ✅ Downloadable sample Excel templates for LSTM input
+### 📈 LSTM Time Series Forecasting
+- Multi-year price forecasting (1-20 years)
+- Excel/CSV data input support
+- Automatic data normalization and sequence generation
+- Handles variable-length historical data [file:2]
 
-### 📄 Professional Reporting
-- ✅ PDF export with embedded images and graphs
-- ✅ Input data blueprint with feature summary tables
-- ✅ Comprehensive analysis across all three models
-- ✅ Year-wise forecast breakdown tables
+### 💰 XGBoost Price Prediction
+- **Dual input modes**: Manual entry or batch CSV/Excel upload
+- 50+ engineered features including property characteristics, location, and quality metrics
+- Optimized hyperparameters for accurate valuation
+- Log-transform predictions for stable price estimates [file:2]
 
-### 🔧 Technical Highlights
-- Built with **Streamlit** for rapid prototyping
-- **TensorFlow/Keras** for deep learning models
-- **XGBoost** for gradient boosting regression
-- **ReportLab** for PDF generation
-- **Plotly** for interactive visualizations
+### 📄 Professional PDF Reports
+- Multi-page comprehensive reports with all predictions
+- Embedded visualizations and data tables
+- Property feature summaries
+- Export-ready format for stakeholders [file:2]
 
----
+## 🏗️ Architecture
 
-## 🏛️ Architecture
 
+┌─────────────────┐
+│ Image Upload │──► U-Net Model ──► Classification
+└─────────────────┘ (Residential/Commercial)
+│
+▼
+┌─────────────────┐ ┌──────────────┐
+│ Historical Data │──► LSTM Model ──►│ Forecasted │
+│ (Excel/CSV) │ │ Prices │
+└─────────────────┘ └──────────────┘
+│
+▼
+┌─────────────────┐ ┌──────────────┐
+│ Property Data │──► XGBoost ─────►│ Final Price │
+│ (50+ features) │ │ Prediction │
+└─────────────────┘ └──────────────┘
+│
+▼
+┌────────────────┐
+│ PDF Report │
+│ Generation │
+└────────────────┘
+
+
+
+## 🚀 Installation
+
+### Prerequisites
+
+Python 3.8+
+TensorFlow 2.x
+Streamlit
+XGBoost
