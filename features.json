@@ -1,0 +1,20 @@
+[
+    "year",
+    "month",
+    "month_sin",
+    "month_cos",
+    "t",
+    "region_id",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_4",
+    "lag_5",
+    "lag_6",
+    "lag_9",
+    "lag_12",
+    "lag_18",
+    "lag_24",
+    "rmean_3",
+    "rmean_6"
+]
