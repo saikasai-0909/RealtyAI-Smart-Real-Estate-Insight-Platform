@@ -183,13 +183,12 @@ st.markdown(
 # ===============================
 # Config / file paths
 # ===============================
-# SPACENET_MODEL_PATH = "models/best_spacenet_unet.keras"
-# SPACENET_MODEL_PATH = "models/unet_model.h5"
-SPACENET_MODEL_PATH = "models/unet_satellite_model.keras"
+
+SPACENET_MODEL_PATH = "unet_satellite_model.keras"
 
 
-CITY_BUNDLE_PATH = "models/city_model_bundle.pkl"
-HOUSE_MODEL_PATH = "models/xgboost_houseprice_model.pkl"
+CITY_BUNDLE_PATH = "city_model_bundle.pkl"
+HOUSE_MODEL_PATH = "xgboost_houseprice_model.pkl"
 
 HOUSE_FEATURES = [
     "OverallQual","GrLivArea","GarageCars","GarageArea","TotalBsmtSF","1stFlrSF",
@@ -1318,3 +1317,4 @@ if st.session_state.logged_in:
    
 else:
     login_signup_page()
+
